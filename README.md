@@ -1,5 +1,7 @@
 ## PROJECT ON PRINTF
-_printf functions is a c function that takes strings, char, float and integar arguments to standard output
-it takes header file <stdio.h> as the header file
-Prototype function is printf(const *char format, ...)
+**_printf:** function that takes strings, char, float
+and integer variable number of arguments and prints 
+to standard output.
+The C standard library has a similar function **printf**
+Prototype: _printf(const *char format, ...)
 
