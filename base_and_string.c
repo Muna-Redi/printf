@@ -1,10 +1,10 @@
-#include "printf.h"
+#include "main.h"
 
 /**
- * tostr - converts int to string
- * @int - number to be converted
- * Return: the sring
- */
+* tostr - converts int to string
+* @num: number to be converted
+* Return: the sring
+*/
 char *tostr(int num)
 {
 	int reducer = 10, i = 0, b = 0;
@@ -33,8 +33,8 @@ char *tostr(int num)
 
 /**
  * c_base - converts decimal to a required base <= 16
- * @base: base required
  * @num: decimal number
+ * @base: base required
  * Return: converted string
  */
 char *c_base(int num, int base)
@@ -64,7 +64,8 @@ char *c_base(int num, int base)
 	ptr = buff;
 	return (ptr);
 }
-/** rev_str - reverses a string
+/**
+ * rev_str - reverses a string
  * @s: string to be reversed
  * Return: pointer to str
  */
@@ -93,5 +94,5 @@ char *rev_str(char *s)
 		}
 		p--;
 	}
-	return(s);
+	return (s);
 }
