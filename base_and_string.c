@@ -40,7 +40,7 @@ char *tostr(int num)
 char *c_base(int num, int base)
 {
 	char *rev_str(char *s);
-	int i = 0, b;
+	int i = 0;
 	char buff[100];
 	char *ptr;
 
