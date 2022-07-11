@@ -1,6 +1,6 @@
-#ifndef PRINTF_H
+#ifndef MAIN_H
 
-#define PRINTF_H
+#define MAIN_H
 
 #include <stdarg.h>
 
