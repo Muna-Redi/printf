@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-My readme
-=======
 ## PROJECT ON PRINTF
 **_printf:** function that takes strings, char, float
 and integer variable number of arguments and prints 
