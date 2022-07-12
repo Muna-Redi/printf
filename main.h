@@ -13,5 +13,5 @@ int _printf(const char *format, ...);
 char *tostr(int num);
 char *rev_str(char *);
 char *c_base(int num, int base);
-
+int _print_int(long int var);
 #endif

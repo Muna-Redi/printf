@@ -46,6 +46,14 @@ int _printf(const char *format, ...)
 					i += strlen(sbuff);
 					pstring(sbuff);
 					break;
+				case 'd':
+					sbuff = va_arg(str, int);
+					i += _print_int((long)(sbuff));
+					break;
+				case 'i':
+					sbuff = va_arg(str, int);
+					i += _print_int((long)(sbuff));
+					break;
 				default:
 					_putchar(*format);
 					i++;
