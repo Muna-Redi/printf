@@ -58,6 +58,19 @@ int _printf(const char *format, ...)
 				format++;
 				i += f(str);
 				continue;
+				case 'c':
+					_putchar(va_arg(str, int));
+					i++;
+					break;
+				case 's':
+					sbuff = va_arg(str, char *);
+					i += strlen(sbuff);
+					pstring(sbuff);
+					break;
+				default:
+					_putchar(*format);
+					i++;
+					break;
 			}
 		}
 		format++;
