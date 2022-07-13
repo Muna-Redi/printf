@@ -5,30 +5,34 @@
 * @num: number to be converted
 * Return: the sring
 */
-char *tostr(int num)
+char *tostr(long int num)
 {
-	int reducer = 10, i = 0, b = 0;
-	char *buff, *str;
+	int reducer = 10, i = 0, b = 0, flag = 0;
+	char *buff, *str, a;
 
-	buff = malloc(100 * sizeof(char));
-	str = malloc(100 * sizeof(char));
-	while (num > 0)
+	buff =  malloc(100 * sizeof(char));
+	while (num > 0 || num <= -1)
 	{
+		if (num <= -1)
+		{
+			num *= -1;
+			buff[0] = '-';
+			i++;
+			flag++;
+			continue;
+		}
 		buff[i] = ((num % reducer) + '0');
-		num /= reducer;
 		i++;
+		num /= reducer;
 	}
 	buff[i] = '\0';
 	i--;
-	for (; i >= 0; i--)
-	{
-		str[b] = buff[i];
-		b++;
-	}
-	str[b] = '\0';
-	return (str);
+	if (flag == 1)
+		rev_str(&(buff[++b]));
+	else
+		rev_str(buff);
+	return(buff);
 	free(buff);
-	free(str);
 }
 
 /**
@@ -54,7 +58,7 @@ char *c_base(int num, int base)
 		}
 		else
 		{
-			buff[i] = (buff[i] - 10 + 'A');
+			buff[i] = (buff[i] - 10 + 'a');
 			i++;
 		}
 		num /= base;
