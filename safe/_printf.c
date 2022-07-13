@@ -1,6 +1,7 @@
 #include "main.h"
 
 /**
+<<<<<<< HEAD:safe/_printf.c
 * pstring: prints a string
 * @b: string to be printed
 * Return: number of printed char
@@ -23,41 +24,52 @@ int pstring(char *b)
 * @...: other arguments
 * Return: number of printed charracters
 */
+=======
+ * _printf - function that prints using soecified formats
+ * @format: list of arguments to print
+ * Return: Number of characters printed
+ */
+>>>>>>> refs/remotes/origin/master:_printf.c
 int _printf(const char *format, ...)
 {
-	va_list str;
-	char *sbuff;
-	int i = 0;
+	va_list rep;
+	int (*f)(va_list);
+	unsigned int i = 0, counter = 0;
 
-	va_start(str, format);
-	while (*format)
+	if (format == NULL)
+		return (-1);
+
+	va_start(rep, format);
+	while (format && format[i])
 	{
-		if (*format != '%')
+		if (format[i] != '%')
 		{
-			_putchar(*format);
+			_putchar(format[i]);
+			counter++;
 			i++;
+			continue;
 		}
 		else
 		{
-			switch (*(++format))
+			if (format[i + 1] == '%')
 			{
-				case 'c':
-					_putchar(va_arg(str, int));
-					i++;
-					break;
-				case 's':
-					sbuff = va_arg(str, char *);
-					i += strlen(sbuff);
-					pstring(sbuff);
-					break;
-				default:
-					_putchar(*format);
-					i++;
-					break;
+				_putchar('%');
+				counter++;
+				i += 2;
+				continue;
+			}
+			else
+			{
+				f = check(&format[i + 1]);
+				if (f == NULL)
+					return (-1);
+				i += 2;
+				counter += f(rep);
+				continue;
 			}
 		}
-		format++;
+		i++;
 	}
-	va_end(str);
-	return (i);
+	va_end(rep);
+	return (counter);
 }

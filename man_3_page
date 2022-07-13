@@ -31,3 +31,34 @@ The int argument is converted to an unsigned char, then the resulting character 
 .TP
 .B s
 The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to a terminating null byte, but do ot include the terminating null byte.
+       d, i   The int argument is converted to signed decimal notation.  The
+              precision, if any, gives the minimum number of digits that
+              must appear; if the converted value requires fewer digits, it
+              is padded on the left with zeros.  The default precision is 1.
+              When 0 is printed with an explicit precision 0, the output is
+              empty.
+
+       o, u, x, X
+              The unsigned int argument is converted to unsigned octal (o),
+              unsigned decimal (u), or unsigned hexadecimal (x and X) nota‐
+              tion.  The letters abcdef are used for x conversions; the let‐
+              ters ABCDEF are used for X conversions.  The precision, if
+              any, gives the minimum number of digits that must appear; if
+              the converted value requires fewer digits, it is padded on the
+              left with zeros.  The default precision is 1.  When 0 is
+              printed with an explicit precision 0, the output is empty.
+.SH EXAMPLE
+#include "holberton.h"
+	 _printf("hello, %s", "people")
+	 output: hello, people
+.SH RETURN VALUE
+Upon successful return, these functions return the number of
+characters printed (excluding the null byte used to end output to
+strings).
+If an output error is encountered, a negative value is returned.
+.SH SEE ALSO
+printf(3).
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Muna-Redi, Bucha1958.
