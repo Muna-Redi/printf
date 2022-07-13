@@ -1,13 +1,14 @@
 #include "main.h"
 
 /**
-* pstring: prints a string
+* pstring -  prints a string
 * @b: string to be printed
 * Return: number of printed char
 */
 int pstring(char *b)
 {
 	int a = 0;
+
 	while (*b)
 	{
 		_putchar(*b);
@@ -30,11 +31,11 @@ int print_i(va_list i)
 	num = va_arg(i, int);
 	s = tostr(num);
 	count += pstring(s);
-	return(count);
+	return (count);
 }
 /**
  * print_d - A function that prints a decimal base 10
- * @i: base 10 integer to print
+ * @d: base 10 integer to print
  * Return: number of printed digits
  */
 int print_d(va_list d)
@@ -45,7 +46,7 @@ int print_d(va_list d)
 	num = va_arg(d, int);
 	s = tostr(num);
 	count += pstring(s);
-	return(count);
+	return (count);
 }
 /**
  * print_b - A function that prints an unsigned int i binary notation

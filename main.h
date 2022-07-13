@@ -9,7 +9,8 @@
 int _putchar(char c);
 int _printf(const char *format, ...);
 char *rev_str(char *s);
-char *c_base(int num, int base);
+char *c_base(unsigned int num, unsigned int base);
+char *oct_hex(unsigned int num, unsigned int base);
 int print_X(va_list X);
 int print_x(va_list x);
 int print_b(va_list b);
