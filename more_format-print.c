@@ -37,12 +37,12 @@ int print_i(va_list i)
  * @i: base 10 integer to print
  * Return: number of printed digits
  */
-int print_d(va_list i)
+int print_d(va_list d)
 {
 	int num, count = 0;
 	char *s;
 
-	num = va_arg(i, int);
+	num = va_arg(d, int);
 	s = tostr(num);
 	count += pstring(s);
 	return(count);

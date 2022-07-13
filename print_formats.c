@@ -34,7 +34,7 @@ int print_c(va_list c)
  */
 int print_u(va_list u)
 {
-	int num, count = 0;
+	unsigned int num, count = 0;
         char *s;
 
         num = va_arg(u, int);

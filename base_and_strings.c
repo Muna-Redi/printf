@@ -44,7 +44,7 @@ char *tostr(long int num)
 char *c_base(int num, int base)
 {
 	char *rev_str(char *s);
-	int i = 0;
+	unsigned int i = 0;
 	char buff[100];
 	char *ptr;
 
