@@ -8,7 +8,7 @@
 int (*check(const char *format))(va_list)
 {
 	int i = 0;
-	print_t p[] = {
+	print_ft p[] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"i", print_i},
@@ -17,6 +17,7 @@ int (*check(const char *format))(va_list)
 		{"u", print_u},
 		{"o", print_o},
 		{"x", print_x},
+		{"X", print_X},
 		{NULL, NULL}
 	};
 
