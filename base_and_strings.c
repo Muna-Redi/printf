@@ -8,7 +8,7 @@
 char *tostr(long int num)
 {
 	int reducer = 10, i = 0, b = 0, flag = 0;
-	char *buff, *str, a;
+	char *buff;
 
 	buff =  malloc(100 * sizeof(char));
 	while (num > 0 || num <= -1)
