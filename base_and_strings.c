@@ -18,7 +18,7 @@ char *tostr(long int num)
 			num *= -1;
 			buff[0] = '-';
 			i++;
-			flag++;
+			flag += 1;
 			continue;
 		}
 		buff[i] = ((num % reducer) + '0');
