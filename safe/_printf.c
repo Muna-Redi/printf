@@ -5,13 +5,17 @@
 * @b: string to be printed
 * Return: number of printed char
 */
-void pstring(char *b)
+int pstring(char *b)
 {
-	while (*b)
-	{
-		_putchar(*b);
-		b++;
-	}
+        int i = 0;
+
+        while (*b)
+        {
+		    _putchar(*b);
+		    b++;
+            i++;
+        }
+        return (i);
 }
 /**
 * _printf - prints to the stdout using format specifiers
