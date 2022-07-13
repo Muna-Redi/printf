@@ -31,7 +31,7 @@ char *tostr(long int num)
 		rev_str(&(buff[++b]));
 	else
 		rev_str(buff);
-	return(buff);
+	return (buff);
 	free(buff);
 }
 
@@ -41,7 +41,7 @@ char *tostr(long int num)
  * @base: base required
  * Return: converted string
  */
-char *c_base(int num, int base)
+char *c_base(unsigned int num, unsigned int base)
 {
 	char *rev_str(char *s);
 	unsigned int i = 0;

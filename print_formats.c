@@ -35,42 +35,26 @@ int print_c(va_list c)
 int print_u(va_list u)
 {
 	unsigned int num, count = 0;
-        char *s;
-
-        num = va_arg(u, int);
-        s = tostr(num);
-        count += pstring(s);
-        return(count);
-}
-/**
- * print_o - A function that prints an unsigned int in octal notation
- * @o: unsigned int to print
- * Return: number of printed digits
- */
-int print_o(va_list o)
-{
-	int count = 0;
-	unsigned int num;
 	char *s;
 
-	num = va_arg(o, unsigned int);
-	s = c_base(num, 8);
+	num = va_arg(u, int);
+	s = tostr(num);
 	count += pstring(s);
-	return(count);
+	return (count);
 }
 /**
- * print_x - A function that prints an ascii char value in
- * lowercase hexadecimal
- * @x: char to print
- * Return: number of printed characters
- */
+* print_x - A function that prints an ascii char value in
+* lowercase hexadecimal
+* @x: char to print
+* Return: number of printed characters
+*/
 int print_x(va_list x)
 {
-	int count = 0, num;
-        char *s;
+	unsigned int count = 0, num;
+	char *s;
 
-        num = va_arg(x, int);
-        s = c_base(num, 16);
-        count += pstring(s);
-        return (count);
+	num = va_arg(x, unsigned int);
+	s = c_base(num, 16);
+	count += pstring(s);
+	return (count);
 }
