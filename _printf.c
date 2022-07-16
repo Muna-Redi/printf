@@ -21,36 +21,43 @@ int _printf(const char *format, ...)
 			counter++;
 			continue;
 		}
-		switch (*++format)
+		else if (*format == '%')
 		{
-		case 's':
-			counter += print_s(fmt);
-		break;
-		case 'c':
-			counter += print_c(fmt);
-		break;
-		case 'd':
-			counter += print_d(fmt);
-		break;
-		case 'u':
-			counter += print_u(fmt);
-		break;
-		case 'i':
-			counter += print_i(fmt);
-		break;
-		case 'o':
-			counter += print_o(fmt);
-		break;
-		case 'X':
-			counter += print_X(fmt);
-		break;
-		case 'x':
-			counter += print_x(fmt);
-		break;
-		default:
-			_putchar(*++format);
-			counter++;
-		break;
+			switch (*++format)
+			{
+			case 's':
+				counter += print_s(fmt);
+			break;
+			case 'c':
+				counter += print_c(fmt);
+			break;
+			case 'd':
+				counter += print_d(fmt);
+			break;
+			case 'u':
+				counter += print_u(fmt);
+			break;
+			case 'i':
+				counter += print_i(fmt);
+			break;
+			case 'o':
+				counter += print_o(fmt);
+			break;
+			case 'X':
+				counter += print_X(fmt);
+			break;
+			case 'x':
+				counter += print_x(fmt);
+			break;
+			case '%':
+				counter += write(1, "%", 1);
+			break;
+			default:
+				counter += write(1, "%", 1);
+				counter += write(1, format, 1);
+			break;
+			}
+
 		}
 	}
 	va_end(fmt);
